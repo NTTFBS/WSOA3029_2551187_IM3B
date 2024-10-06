@@ -1,0 +1,282 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #071218; 
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+body::before {
+    content: "";
+    background-image: url('../images/AbstractWave1.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.03; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+/*
+.hero {
+    background-image: url('/images.jpg'); 
+    padding-top: 20px; 
+}
+    */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-inner {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 15px; 
+}
+
+.nav-logo-wrap .brand {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.nav-menu-wrap .nav-menu-2 {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px; 
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2ed8ff; /* underlines the page link the viewer is currently on.
+}
+
+.menu-button .menu-icon {
+    /* */
+}
+
+.section.center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.content-left {
+    flex: 1;
+    padding-right: 20px; 
+    transform: translate(var(--content-left-x, 100px), var(--content-left-y, -0px)); 
+}
+/* these two are used for custom alignment. some elements needed to be aligned very specifically */
+.content-right {
+    flex: 1;
+    text-align: right;
+    transform: translate(var(--content-right-x, -100px), var(--content-right-y, 50px)); 
+}
+
+
+
+.heading-3 {
+    font-size: var(--heading-size, 80px); 
+    margin-bottom: 10px; 
+}
+
+.heading-sub {
+    font-size: var(--heading-size, 40px); 
+    margin-bottom: 10px; 
+}
+
+.hero-subhead {
+    font-size: var(--subhead-size, 24px); 
+    margin-bottom: 20px; 
+    font-weight: 400; 
+}
+
+.button.w-button {
+    background-color: #2ed8ff; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button.w-button:hover {
+    background-color: #175968; 
+}
+
+.responsive-image {
+    width: var(--image-width, 70%); 
+    height: auto;
+}
+
+.explore-button {
+    background-color: #2ed8ff; 
+    color: white;
+    text-decoration: none;
+    border-radius: 25px; /* button is round rectangle instead of oval */
+    font-size: 16px;
+    margin-left: 0;
+    width: 70px; 
+    height: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+}
+
+.weather-text {
+    color: #2ed8ff; 
+}
+
+.explore-text {
+    font-size: var(--explore-text-size, 20px); 
+    color: #FFFFFF; 
+    margin-top: 30px; 
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: auto;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+}
+/* used for displaying tooltip on choropleth and bar graph */
+
+.section-divider {
+    border: 1px solid white;
+    width: 100%;
+    margin: 0;
+}
+
+.interactive-globe {
+    font-size: var(--interactive-globe-size, 40px); 
+    position: absolute;
+    top: var(--interactive-globe-top, -300px); 
+    left: var(--interactive-globe-left, 35%); 
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+}
+
+.city-name {
+    position: absolute;
+    right: var(--city-right, -650px); 
+    top: var(--city-top, -70px); 
+    font-size: var(--city-size, 32px); 
+}
+
+.city-temp {
+    position: absolute;
+    color: #2ed8ff; 
+    right: var(--city-right, -625px); 
+    top: var(--city-top, -30px); 
+    font-size: var(--city-size, 32px);
+}
+
+.spin-me {
+    font-size: var(--spin-me-size, 24px); 
+    position: absolute;
+    top: var(--spin-me-top, 20px); 
+    left: var(--spin-me-left, 50%); 
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+}
+
+.weather-data {
+    font-size: var(--weather-data-size, 16px); 
+    position: absolute;
+    bottom: var(--weather-data-bottom, 20px); 
+    left: var(--weather-data-left, 50%); 
+    transform: translateX(-50%); 
+}
+
+.highest-temperatures {
+    font-size: var(--highest-temperatures-size, 40px); 
+    position: absolute;
+    top: var(--highest-temperatures-top, -300px); 
+    left: var(--highest-temperatures-left, 35%); 
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+}
+
+#bar-chart {
+    width: var(--bar-chart-width, 100%); 
+    height: var(--bar-chart-height, 400px); 
+    margin-bottom: 100px; 
+}
+
+.wireframe {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.wireframe-image {
+    width: 45%; 
+    height: auto;
+    margin: 0 20px; 
+}
+
+.wireframe-text {
+    width: 45%; 
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    
+}
+/* animation to slide up images and text */
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.footer {
+    background-color: #071218;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.label {
+    fill: white; 
+}

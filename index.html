@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Weather</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+</head>
+<body class="body">
+    <div id="navbar"></div>
+    <div class="hero">
+    </div>
+    <div class="section center">
+        <div class="content-left">
+            <h1 class="heading-3">WORLDWIDE<br><span class="weather-text">WEATHER</span></h1>
+            <h3 class="hero-subhead">EXPLORE TEMPERATURES AND FORECASTS ACROSS THE GLOBE.</h3>
+            <a href="#" class="button w-button explore-button">EXPLORE</a>
+            <p class="explore-text">Accurate Weather Data provided by OpenWeather</p>
+        </div>
+        <div class="content-right">
+            <img src="/images/LowpoyEarth.png" alt="Weather Image" class="responsive-image">
+        </div>
+    </div>
+    <hr class="section-divider">
+    <div class="section center" id="choropleth-section">
+        <div class="content-left">
+            <h1 class="heading-sub interactive-globe">INTERACTIVE GLOBE</h1>
+            <h3 class="spin-me">Spin Me!</h3>
+        </div>
+        <div class="content-right">
+            <h3 class="hero-subhead city-name">TOKYO</h3>
+            <h3 class="hero-subhead city-temp">19C</h3>
+        </div>
+        <div class="map-content">
+            <div id="map"></div>
+            <p class="weather-data">Accurate Weather Data provided by OpenWeather</p>
+        </div>
+    </div>
+    <hr class="section-divider">
+    <div class="section center">
+        <div class="content-left">
+            <h1 class="heading-sub highest-temperatures">HIGHEST TEMPERATURES TODAY</h1>
+        </div>
+        <div class="content-right">
+            <div id="bar-chart"></div>
+            <p class="weather-data">Accurate Weather Data provided by OpenWeather</p>
+        </div>
+    </div>
+    <div id="tooltip" class="tooltip"></div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
