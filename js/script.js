@@ -204,7 +204,12 @@ const tooltip = d3.select("#tooltip");
 
 // Load Geo data for the world map and render the countries
 async function loadMap() {
+    const loadingElement = document.getElementById('loading');
+
     try {
+        // Show loading icon
+        loadingElement.style.display = 'block';
+
         const world = await d3.json("https://d3js.org/world-110m.v1.json");
         svg.append("path")
             .datum(topojson.feature(world, world.objects.countries))
@@ -568,6 +573,9 @@ async function loadMap() {
         }
     } catch (error) {
         console.error("Error loading the map:", error);
+    } finally {
+        // Hide loading icon after the loading process
+        loadingElement.style.display = 'none';
     }
 }
 
@@ -789,3 +797,4 @@ exploreButtonAbout.addEventListener('click', (event) => {
     event.preventDefault(); 
     aboutSection.scrollIntoView({ behavior: 'smooth' }); 
 });
+

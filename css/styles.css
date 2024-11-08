@@ -735,3 +735,25 @@ body::before {
 .scroll-to-top:hover {
     cursor: pointer;
 }
+
+
+.interactive-globe {
+    font-size: var(--interactive-globe-size, 40px);
+    position: absolute; /* Keep it fixed in position */
+    top: -100; /* Set it to the top of the section */
+    left: 50%; 
+    transform: translateX(-65%); 
+    white-space: nowrap; 
+    margin-bottom: 0; /* No bottom margin to reduce the gap */
+}
+
+.interactive-map-info {
+    position: absolute; /* Position to not affect surrounding elements */
+    top: calc(10% - 100px); /* Position below the heading */
+    left: 50%;
+    transform: translateX(-140%); /* Center it horizontally */
+    margin: 0; /* Reset margin */
+    font-size: 14px; /* Font size */
+    color: rgba(255, 255, 255, 0.93); /* Adjust color based on your design */
+    line-height: 1.5; /* Line height for readability */
+}
