@@ -22,13 +22,7 @@ body::before {
     z-index: -1; 
 }
 
-/*
-.hero {
-    background-image: url('/images.jpg'); 
-    padding-top: 20px; 
-}
-    */
-
+/* Navigation Styling */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -67,11 +61,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #2ed8ff; /* underlines the page link the viewer is currently on.
+    background-color: #2ed8ff; /* Underlines the page link the viewer is currently on */
 }
 
 .menu-button .menu-icon {
-    /* */
+    /* Placeholder for menu icon */
 }
 
 .section.center {
@@ -80,6 +74,7 @@ body::before {
     align-items: center;
     padding: 50px 0;
     position: relative;
+    flex-wrap: wrap; /* Enables wrapping on smaller screens */
 }
 
 .content-left {
@@ -87,14 +82,12 @@ body::before {
     padding-right: 20px; 
     transform: translate(var(--content-left-x, 100px), var(--content-left-y, -0px)); 
 }
-/* these two are used for custom alignment. some elements needed to be aligned very specifically */
+
 .content-right {
     flex: 1;
     text-align: right;
     transform: translate(var(--content-right-x, -100px), var(--content-right-y, 50px)); 
 }
-
-
 
 .heading-3 {
     font-size: var(--heading-size, 80px); 
@@ -134,7 +127,7 @@ body::before {
     background-color: #2ed8ff; 
     color: white;
     text-decoration: none;
-    border-radius: 25px; /* button is round rectangle instead of oval */
+    border-radius: 25px; /* Button is round rectangle */
     font-size: 16px;
     margin-left: 0;
     width: 70px; 
@@ -167,8 +160,9 @@ body::before {
     border-radius: 8px;
     pointer-events: none;
     opacity: 0;
+    transition: opacity 0.2s; /* Adds a transition for smoother tooltip appearance */
 }
-/* used for displaying tooltip on choropleth and bar graph */
+
 
 .section-divider {
     border: 1px solid white;
@@ -229,7 +223,18 @@ body::before {
 #bar-chart {
     width: var(--bar-chart-width, 100%); 
     height: var(--bar-chart-height, 400px); 
-    margin-bottom: 100px; 
+    margin-top: 0px;
+    margin-bottom: 0px; 
+    padding-bottom: 120px;
+}
+
+#second-line-chart {
+    position: absolute; /* Positioned over the bar chart */
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 400px;
+    display: none; 
 }
 
 .wireframe {
@@ -252,15 +257,12 @@ body::before {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    
 }
-/* animation to slide up images and text */
+
 .slide-up.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-
 
 .footer {
     background-color: #071218;
@@ -269,14 +271,464 @@ body::before {
     padding: 20px 0;
     width: 100%;
 }
-
+    
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-
-
 .label {
     fill: white; 
+}
+
+/* Ensure chart is somewhat responsive */
+.line-chart-wrapper {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#line-chart {
+    margin: 0 auto; 
+    width: 80%; 
+    max-width: 900px; 
+    height: 450px; 
+    overflow: hidden; 
+}
+
+.line-chart-title {
+    text-align: center; 
+    margin-bottom: 10px; 
+}
+
+.bar-chart-wrapper {
+    padding-bottom: 0px; 
+}
+
+#bar-chart {
+    width: calc(100% - 40px); 
+    margin: 0 auto;        
+    margin-top: 0px; 
+    padding-bottom: 280px;
+}
+
+/* Controls Style */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.controls input {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.controls button {
+    margin-left: 10px;
+    padding: 5px 15px;
+}
+
+.controls select {
+    margin-left: 10px;
+}
+
+.loading {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 94, 149, 0.9);
+    border: 1px solid #ccc;
+    padding: 20px; 
+    border-radius: 5px;
+    z-index: 1000; 
+    color: white; 
+    font-size: 16px; 
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1001; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #0d283f;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.legend {
+    position: absolute;
+    top: 250px; 
+    right: 150px; 
+    background-color: #2f3861; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; 
+}
+
+.legend div {
+    padding: 2px 0; 
+}
+
+.map-content {
+    position: relative; 
+}
+
+.glow-background {
+    position: absolute; 
+    background-color: rgba(0, 153, 255, 0.2); 
+    box-shadow: 0 0 10px rgba(0, 153, 255, 0.2), 
+                0 0 30px rgba(0, 153, 255, 0.2), 
+                0 0 60px rgba(0, 234, 255, 0.2); 
+    z-index: 0; 
+    border-radius: 50%;
+    width: 425px; 
+    height: 425px; 
+    left: 50.5%; 
+    top: 58%; 
+    transform: translate(-50%, -50%); 
+}
+
+.slider-container {
+    position: absolute; 
+    top: 50px; 
+    left: 6%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    align-items: center; 
+    z-index: 10; 
+}
+
+.slider-container i {
+    margin-right: 10px; 
+    color: rgb(48, 241, 255); 
+    font-size: 24px; 
+}
+
+.slider-container label {
+    margin-right: 10px; 
+    color: rgb(255, 255, 255); 
+}
+
+.slider-container input[type="range"] {
+    cursor: pointer; 
+}
+
+/* Comment Display Styling for Visibility */
+.comment-display {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px; 
+    height: 100px;
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+/* Modal Styling */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* Contact Form Styling */
+.contact-container {
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+    background-color: #1a1c26f7; 
+    border-radius: 8px; 
+    color: #e6e6e6; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.contact-title {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+.contact-info {
+    text-align: center; 
+    color: #e6e6e6; 
+    margin-top: 10px; 
+    font-size: 16px; 
+}
+
+.form-row {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    margin-bottom: 20px; 
+}
+
+.form-group {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+}
+
+.first-name-group {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.form-group label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-size: 14px; 
+    color: #bcbcbc; 
+}
+
+.form-group input,
+.form-group textarea {
+    border: none; 
+    border-bottom: 2px solid #ccc; 
+    background-color: transparent; 
+    padding: 10px 0; 
+    font-size: 14px; 
+    color: #fff; 
+    width: 100%; 
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #2ed8ff; 
+    outline: none; 
+}
+
+.input-message {
+    height: 100px; 
+    margin-top: 10px; 
+}
+
+.submit-button {
+    background-color: #2ed8ff; 
+    color: white; 
+    border: none; 
+    padding: 12px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    display: block; 
+    margin: 20px auto 0; 
+}
+
+.submit-button:hover {
+    background-color: #175968; 
+}
+
+.error-message {
+    color: red; 
+    font-size: 12px; 
+    margin-top: 5px; 
+}
+
+.success-message {
+    color: green; 
+    font-size: 14px; 
+    margin-top: 10px; 
+}
+
+/* Customizable vertical spacing */
+.form-group {
+    margin-bottom: 15px; 
+}
+
+.heading-sub {
+    font-size: var(--heading-size, 40px); 
+    margin-bottom: 10px; 
+    text-align: center; 
+}
+
+#bar-city-filter {
+    padding: 5px; 
+    border-radius: 3px;
+    border: none;
+    background-color: #0e4468; 
+    color: white; 
+}
+
+/* Visually Hidden Class for Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .section.center {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 20px; 
+    }
+
+    .content-left, .content-right {
+        text-align: center; 
+        padding: 0; 
+        transform: none; 
+    }
+
+    .heading-3 {
+        font-size: 50px; /
+    }
+
+    .heading-sub, .hero-subhead {
+        font-size: 30px; 
+    }
+
+    .explore-button {
+        width: 100%; 
+    }
+
+    .tooltip {
+        width: 100px; 
+    }
+
+    .comment-display {
+        width: 100%; 
+    }
+
+    .controls {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    .modal-content {
+        width: 90%; 
+    }
+}
+
+
+
+#scroll-indicator {
+    position: fixed;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(46, 216, 255, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other elements */
+    transition: opacity 0.5s; 
+}
+
+/* The icon in the scroll indicator */
+#scroll-indicator i {
+    margin-right: 8px; 
+    font-size: 20px; 
+}
+
+#scroll-indicator:hover {
+    cursor: pointer; 
+}
+
+/* Hide the scroll indicator when not needed */
+.hidden {
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+
+
+.hidden {
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+
+.essay-container {
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: justify; 
+}
+
+.essay-title {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.essay-content {
+    margin-top: 20px; 
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: rgba(46, 216, 255, 0.8); 
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    align-items: center; 
+    z-index: 1000; 
+    display: none; 
+    transition: opacity 0.5s; 
+}
+
+.scroll-to-top i {
+    margin-right: 8px; 
+    font-size: 20px; 
+}
+
+.scroll-to-top:hover {
+    cursor: pointer;
 }

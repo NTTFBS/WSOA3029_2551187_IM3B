@@ -1,40 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldwide Weather</title>
+    <meta name="description" content="Read critical analysis essays on website, applications, and design decisions">
+    <meta name="keywords" content="weather, forecast, global temperatures, interactive globe, data visualization, OpenWeather, temperatures today">
+    <meta name="author" content="2551187">
+    <title>Critical Analysis</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
 </head>
+
 <body class="body">
-    <div id="navbar"></div>
-    <div class="hero">
-        
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <!-- Include your navigation items here -->
+    </nav>
+    <div id="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+        <span>Scroll Down</span>
     </div>
-    <div class="section center">
-        <div class="content-left">
+    <header class="hero" role="banner">
+        <h1 class="visually-hidden">Critical Analysis</h1>
+    </header>
+
+    <main class="section center">
+        <section class="content-left">
             <h1 class="heading-3">CRITICAL<br><span class="weather-text">ANALYSIS</span></h1>
             <h3 class="hero-subhead">PROVIDING A CRITICAL ANALYSIS OF A DATA VISUALIZATION PROJECT</h3>
-            <a href="#" class="button w-button read-button">READ</a>
-        </div>
-        <div class="content-right">
+            <a href="#" class="button w-button read-button" role="button" aria-label="Read about the critical analysis">READ</a>
+        </section>
+        <aside class="content-right" aria-label="Weather visualization">
             <img src="images/TheoryImage.png" alt="Weather Image" class="responsive-image">
-        </div>
-    </div>
+        </aside>
+    </main>
+
     <hr class="section-divider">
-    <div class="section center" id="theory-section">
-        <div class="content-left">
-            <h1 class="heading-3">ESSAY</h1>
+
+
+
+    <section class="section center" id="theory-section">
+        <div class="essay-container">  <!-- New class for essay container -->
+            <h1 class="heading-3 essay-title">Critique Essay</h1> <!-- New class for essay title -->
+            <article class="essay-content"> <!-- New class for essay content -->
+                <h3>Introduction</h3>
+                <p>This essay will provide a critical reflection on this website project, the “Worldwide Weather Data Visualisation Project” (Source: Worldwide Weather Data Visualization). This project aims to provide users with accurate live global weather information and forecasts, while presenting it in an interactive way. This essay will therefore critique how it creates an interactive and engaging experience for users, as well as the rationale behind the UI/UX design decisions and principles used in its development. Additionally, this essay will also analyse the importance of the modern web technologies and design techniques used, while identifying the challenges faced during development.</p>
+
+                <h3>Global Economics of Web Technologies</h3>
+                <p>Web technologies can be defined as the various tools and elements that interact with each other to communicate data to between each other and ultimately, the user. These elements include the World Wide Web (WWW), Web browsers and pages, as well as the code and APIs (Application Programming Interface) used in the development of a web application (GeeksforGeeks, 2014). In the context of this project, real-time weather data is used to provide users with accurate temperature forecasts. This not only equips the average person with knowledge about the weather information, allowing them to plan their days accordingly, but can also assist businesses, particularly those relying on climate conditions to make a profit.</p>
+
+                <h3>Farming Sector</h3>
+                <p>Applications, therefore, that allow people across the world to access real-time weather data, can have a direct impact on the global economy. Within agriculture, farming seasons are dependent on climate conditions, which can greatly affect the amount and quality of crops provided during that season. Before the creation of weather-specific web technologies, weather forecasts were done by observing and monitoring daily weather patterns over time (Cahir, 2024). However, within the last 2 centuries, due to the irregular weather patterns as a result of climate change, past weather data captured through observation is no longer as accurate as it once was, lowering the predictability of weather forecasts (NASA, 2024). Farming in the modern day without access to accurate and reliable weather data can be detrimental to not only farmers but also the agricultural sector and economy as a whole. The introduction of web technologies in farming has therefore had a significant positive impact on the global economy, by providing farmers with accurate weather forecasts at the tips of their fingers, allowing them to prepare for their farming seasons appropriately (Drury et al., 2019).</p>
+
+                <h3>Transport Sector</h3>
+                <p>Furthermore, the agricultural sector is not the only area of the economy that utilizes weather data as part of its critical operations. The transport sector, especially air travel, heavily relies on weather forecasts to plan their journeys. The Air Traffic Management (ATM) centres of many airports around the world use weather-based trajectory prediction and severe weather monitoring systems to determine the safety of each flight and calculate possible reroutes if weather conditions on the original flight path are too dangerous (Tian et al., 2021). Access to accurate weather data is therefore essential in the global economy today. Many sectors of the economy rely on this weather data for their core day-to-day operations. From farming to transport, web technologies play a crucial role in maintaining a functioning economy. However, the accuracy of weather data becomes irrelevant if it is not communicated in a way that the user/viewer understands. The presentation of this data, turning it into valuable information, is therefore what makes it effective.</p>
+
+                <h3>Development tools</h3>
+                <p>As previously mentioned, the weather data available to the user is only as effective as the medium/mode it is presented in. The code of the website (HTML, JS, and CSS) therefore serves as the language which is used to communicate the information between the API, which stores the weather data, and the web browser, which displays the information to the user. The HTML (HyperText Markup Language) provides the structure of each webpage, stored in an HTML document, and the positioning of the content therein, allowing the user to view the website in an easily accessible and understandable format.</p>
+                
+                <p>The CSS (Cascading Style Sheet), as the name suggests, provides the styling and formatting of the website, stored in a CSS file, ensuring that it is presented in a visually appealing manner to the viewer, effectively giving the website its visual identity. This allows browsers to download and cache the styling of a webpage and automatically apply it to the entire website, loading pages quicker (Kumar, 2022).</p>
+
+                <h4>Figure 1:</h4><p>Screenshot of my website without CSS styling</p>
+                <h4>Figure 2:</h4><p>Screenshot of my website with CSS styling</p>
+
+                <p>The use of JavaScript (JS) in my website is essential for creating interactive and dynamic content, as well as animations and form validation. Without JS, features such as DOM (Document Object Model) manipulation, which allows HTML elements such as text, buttons, and images to be dynamically updated, and form validation, a process that verifies user information, would not be possible. Both DOM manipulation and form validation play crucial roles in my website. For example, in the image below, the temperature text below “TOKYO” as well as the “TOKYO” text itself utilizes DOM manipulation to dynamically update the text content based on the city the user has last hovered over.</p>
+
+                <h4>Figure 3:</h4><p>Screenshot of a Choropleth map with temperature data.</p>
+
+                <p>Additionally, the error messages displayed on the ‘Contact Us’ form at the bottom of the homepage would not function correctly if it were not for JS, which ensures that the user information is correct before submitting it, effectively allowing users to submit incorrect information, which could affect the client base a website is able to capture.</p>
+
+                <h4>Figure 4:</h4><p>Screenshot of a contact form that captures user information.</p>
+
+                <p>In tandem with JS, a JS library called ‘D3.js’ plays a key role in creating the data visualizations visible on the website. The D3.js library allows data (such as the API data from OpenWeather Map) to be converted into interactive data visualizations, such as the choropleth map, bar graph, and line chart on my website, providing an engaging way for users to interact with the data while visualizing weather data easily.</p>
+
+                <h4>Figure 5:</h4><p>Screenshot of a bar graph that uses D3.js for interactivity.</p>
+
+                <h3>Artistic Implications of Design Choices</h3>
+
+                <h4>Colour Schemes</h4>
+                <p>Upon opening the webpage for the first time, one distinct characteristic is evident: the dark colour scheme of the website. As a design choice, the inclusion of a dark colour scheme serves two purposes on my website. The first is partly a result of research I did on potential colour schemes for my website, focusing on what would be easier and more pleasant for users to look at. I found an article that documents a study on the effectiveness of dark mode on smartphones and computers. The article by Greg Bullock of TheraSpecs notes that dark mode is not only easier on the eyes of users but especially of use to those who are sensitive to light (Bullock, 2020). Although there is still much debate on whether light mode or dark mode could affect visual performance in users, the article made it quite clear that most website users prefer dark mode over light mode, which I therefore opted to use what is more preferred by users.</p>
+
+                <p>The second reason for choosing the dark colour scheme is a direct result of the theme of my website, which is presenting weather data. I imagined the viewer looking at the earth from space and flying around the globe to see temperatures all around the world, and I wanted to simulate this experience both in terms of the colour scheme and the main data visualisation on my website, the choropleth map.</p>
+                
+                <h4>Figure 6:</h4><p>Image of the earth from space.</p>
+                
+                <h4>Figure 7:</h4><p>Screenshot of the choropleth map on my website.</p>
+
+                <p>Additionally, the use of blue as an accent also stems from the idea of looking at the earth from space, as well as the link between blue and water. Since black and blue are the main two colours visible from space and blue is often linked to water (frequently used in weather forecasts for precipitation), I decided to include these for that reason. By having a dark background, the whites and blues dotted across the website draw the viewer’s attention to the key elements, using contrast as a tool to guide the viewer while making the website easy to navigate visually (Hiles, 2020).</p> 
+
+                <p>Colour is also used to indicate temperature on my choropleth map and bar graph. Darker blues are used for colder temperatures, as blue is often linked to ‘cool’ or cold, and more green/yellow colours are to indicate warmer temperatures, allowing users to not only make a clear distinction between the different temperatures, but also to have an idea of what that temperature might be simply by looking at its colour indicator (Issacharoff, 2022).</p> 
+
+                <h4>UI/UX Design</h4>
+
+                <h4>Homepage</h4>
+                <h4>Figure 8:</h4><p>Screenshot of my website's home page</p>
+                <p>On the homepage, I made sure that the user would immediately know what the website is about. The bold text “WORLDWIDE WEATHER” and the image of the globe communicate to the user that the website is around the theme of weather and introduce them to most of the website’s main colours. Important and interactive elements are highlighted in light blue, which contrasts against the dark background, making them visible to users. </p>
+
+                <p>The call-to-action “EXPLORE” button prompts the user to explore the website further, taking them to the first data visualization. Additionally, the “Scroll Down” indicator at the bottom of the page also lets users know that there is more content further down, and that they should keep scrolling.</p>
+
+                <h4>Choropleth Map</h4>
+                <p>On my first data visualization, the choropleth map, I have made the visualization easy to understand, as it is a simple map of the globe. There are dots on the globe, letting the user know that these dots indicate real-world city locations. Upon hovering over a city dot with the mouse, a tooltip clearly labels the city name and the temperature of that city. Supplementing the tooltip, the text on the right of the choropleth also updates to show the city name and temperature. The dots clearly differentiate between the various cities on the map, making it easy for the user to identify a city. The “Spin Me!” text on the left of the map, also let’s the user know that the map is interactable, without them having to guess or potentially miss it.
+
+                <h4>Choropleth Interactivity</h4>
+                <p>The choropleth map can be spun around to navigate to different cities on the globe, allowing the user to directly interact with the globe. This is an intuitive way to get the user the globe as they can simply click and drag the map to spin it. There is also a zoom slider above the choropleth, which enlarges or decreases the size of the map for a closer look at city locations. When a city location/dot is hovered over, the city name and temperature are displayed on the right of the map, as well as in a tooltip which appears above the mouse cursor (UXPin, 2024). For an extra layer of interactivity, clicking on a city dot scrolls the screen down to the line chart which updates to exclusively display the temperature data of the city that was clicked on, displaying more detailed information about that city’s temperature.</p>
+
+                <h4>Bar Graph</h4>
+                <p>My second data visualization, the bar graph, similar to the choropleth map, uses varied colours to communicate temperature to the viewer. Lower temperatures are darker blue and warmer temperatures are light green. City labels below each bar let the user know which city belongs to which bar. The exact temperature value of each city is shown above each bar, without the viewer having to guess the temperature by matching it with the y-axis, allowing users to quickly skim through the graph for accurate information that is easy to understand (Cleveland and McGill, 1984). By positioning the temperatures next to each other, users can compare the temperatures of cities around the world, possibly helping them make an informed decision about a travel destination.</p>
+
+                <h4>Bar Graph Interactivity</h4>
+                <p>Similar to the choropleth map, hovering over a bar on the bar graph displays a tooltip with the city name and temperature data. On the right of the bar graph, there is a filter that allows the user to select a city to be isolated. This filter dynamically updates the bar graph to display only the bar of the city selected, hiding the others. Clicking on a city bar in the bar graph also updates the line chart to only display the temperature information of that city and scrolls the screen down to the line chart.</p>
+
+                <h4>Line Chart</h4>
+                <p>The third data visualization on my website is the line chart. The line chart provides viewers with a 5-day forecast of temperatures from all the cities present in the choropleth map and bar graph. Using the line chart, users can accurately compare temperatures of different cities over a 5-day period. Each city line/dot is a different colour, allowing for clear differentiation between them, and there is a legend on the right of the chart, letting users know which colour belongs to which city, ensuring clarity in the reading of the chart. Once again, hovering over a city dot in the line chart displays a tooltip that provides the temperature reading and exact time of the temperature forecast for each city (Knaflic, 2015).</p>
+
+                <h4>Line Chart Interactivity</h4>
+                <p>In my previous essay assignment, in which I critiqued the line chart in a data visualization project by Reuters, I noted that the line chart in that project was quite cluttered and difficult to distinguish between the different countries on it (Li, 2020). This is something that I kept in mind when making my line chart, making sure to include a filter that users can use to only display the forecast of a particular city, hiding others. This is especially useful if more cities are added to the line chart, ensuring that the user has the data from many cities, but is still able to focus on a specific city. Along with the filter is a comment box that users can use to make notes of the various temperature readings, effectively tracking temperature over more than just a 5-day period.</p>
+
+                <h3>Challenges During Development</h3>
+                <p>When I first started developing the website, the main problem I ran into was finding an API that provided the data I needed. I had originally planned to make this data visualization project an iceberg tracker, tracking the melting of icebergs in real time. However, I could find an API that worked. Staying on the theme of the climate, I then opted for a weather data API by OpenWeather Map, which provides real-time weather data from across the world.</p>
+                <p>The second biggest challenge I faced was the main data visualization, the choropleth map. Implementing a flat choropleth was not too difficult, as there are several YouTube tutorials and StackOverflow forums that document this process, however, turning the choropleth into an interactive, spinning globe was something that took up a lot of my time. I eventually managed to get it working after finding project files for a choropleth map on GitHub and asked ChatGPT to help me integrate it with the data I already had from my API.</p>
+                <p>Lastly, responsive design for my data visualizations also proved to be difficult. Although the images, text, buttons, and sections on the website are responsive, getting the data visualizations to scale correctly with the screen size was not as simple. Despite many attempts, I was only able to get the line chart to somewhat scale correctly. This is an area I definitely need more practice in and should have focused on from the start, rather than trying to implement it later.</p>
+
+                <h3>Professional Practices</h3>
+                <p>I believe that my website aligns with a number of professional practices in web development. The most important being, focusing on the user and creating an engaging experience for them through the interactive data visualizations and easy to understand navigation. Additionally, the use of APIs and the D3.js library allows accurate data to be presented in visually appealing ways, which many commercial-grade websites use. I have also tried to follow HTML, JS and CSS best practices where possible to keep up with the industry standard, although my responsive design could be much better.</p>
+
+                <h3>Conclusion</h3>
+                <p>In conclusion, this weather data visualization project aims to be an interactive and engaging experience for users, while presenting weather data to them in visually interesting ways, through the use of choropleths, graphs and charts. This project was made to align with commercial-grade practices as best as possible by creating a user-centric experience and adhering to HTML, JS and CSS best practices.</p>
+
+                <h3>Bibliography</h3>
+                <ul>
+                    <li>Bullock, G. (2020). ‘Is Dark Mode Better for Headaches, Eye Strain & Light Sensitivity?’. TheraSpecs. Available at: https://www.theraspecs.com/blog/dark-mode-for-headaches-eye-strain-light-sensitivity/ (Accessed: 8 November 2024).</li>
+                    <li>Cahir, J. (2024). ‘History of weather forecasting’. Britannica. Available at: https://www.britannica.com/science/weather-forecasting/History-of-weather-forecasting (Accessed: 8 November 2024).</li>
+                    <li>Cleveland, W. S., and McGill, R. (1984). ‘Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical User Interfaces’. Journal of the American Statistical Association. Available at: https://www.jstor.org/stable/2288400 (Accessed: 8 November 2024).</li>
+                    <li>Drury, B., Fernandes, R., Moura, M., and Lopes, A. (2019). ‘A survey of semantic web technology for agriculture’. ScienceDirect. Available at: https://www.sciencedirect.com/science/article/pii/S2214317318302580 (Accessed: 8 November 2024).</li>
+                    <li>GeeksForGeeks. (2014). ‘Web Technology’. Available at: https://www.geeksforgeeks.org/web-technology/ (Accessed: 8 November 2024).</li>
+                    <li>Hiles, O. (2020). ‘The Importance of Contrast in Design’. ThinkSweeney. Available at: https://thinksweeney.com/the-importance-of-contrast-in-design/ (Accessed: 8 November 2020).</li>
+                    <li>Issacharoff, D. (2022). ‘Color Theory Fundamentals Every Web Designer Should Know’. Elementor. Available at: https://elementor.com/blog/color-theory-web-design/ (Accessed: 8 November 2024).</li>
+                    <li>Knaflic, C.N. (2015). Storytelling with data: A data visualization guide for business professionals. Hoboken, NJ: John Wiley & Sons, Inc. Available at: https://books.google.co.za/books?hl=en&lr=&id=retRCgAAQBAJ&oi=fnd&pg=PR9&dq=knaflic+&ots=Kq9FCtPu7Z&sig=2LB3IkOvqrEywxnWuJ-QrW1ZVbA&redir_esc=y#v=onepage&q=knaflic&f=false (Accessed: 8 November 2024).</li>
+                    <li>Kumar, R. (2022). ‘What Is CSS and its Importance in Web Development ?’ DevOpsSchool. Available at: https://www.devopsschool.com/blog/what-is-css-and-its-importance-in-web-development/ (Accessed: 8 November 2024).</li>
+                    <li>NASA. (2024). ‘Extreme Weather and Climate Change’. NASA. Available at: https://science.nasa.gov/climate-change/extreme-weather/ (Accessed: 8 November 2024).</li>
+                    <li>Qi, L. (2020). ‘Overview of Data Visualization’. SpringerLink. Available at: https://link.springer.com/chapter/10.1007/978-981-15-5069-0_2 (Accessed: 8 November 2024).</li>
+                    <li>Tian, H., Presa-Reyes, M., Tao, Y., Wang, T., Pouyanfar, S., Miguel, A., Luis, S., Shyu, M., Chen, S., and Iyengar, S. (2021). ‘Data Analytics for Air Travel Data: A Survey and New Perspectives’. ACM Digital Library. Available at: https://dl.acm.org/doi/fullHtml/10.1145/3469028#ref-001 (Accessed: 8 November 2024).</li>
+                </ul>
+            </article>
         </div>
-        <div class="content-right">
-            <iframe src="essays/2551187_WSOA3029A_Assignment2_CriticalEssay.pdf" width="100%" height="600px"></iframe>
-        </div>
-    </div>
+    </section>
+
     <hr class="section-divider">
+
+
+    <section class="section center" id="theory-section">
+        <div class="essay-container">  <!-- New class for essay container -->
+            <h1 class="heading-3 essay-title">Critique Essay</h1> <!-- New class for essay title -->
+            <article class="essay-content"> <!-- New class for essay content -->
+                <h2>A Critical Analysis of ‘COVID-19 Vaccination Tracker’ by Reuters (Reuters, 2021)</h2>
+
+                <h3>Introduction</h3>
+                <p>The following essay is a critical analysis of the data visualization techniques used in the data journalism piece ‘COVID-19 Vaccination Tracker’ by Reuters (Source: Latest updates: COVID-19 vaccination charts, maps and eligibility by country (reuters.com)). This project by Reuters aims to track the total number of COVID-19 vaccinations administered per country from March 25th of 2021 (publication date) up to July 15th of 2022, which estimates how many people across the world have obtained protection against the virus. This essay will offer a detailed critique of the effectiveness of data visualization techniques used to convey this information, as well as the use of UI/UX design principles present in the project. Finally, this essay will comment on how narrative has been used alongside data visualization to create a data-driven story.</p>
+
+                <h3>How Will Data Visualization be Analysed?</h3>
+                <p>Although the full project by Reuters makes use of 4 different data visualization techniques (choropleth map, bar graph, line chart and bubble graph), I will specifically be analysing the Choropleth Map and Line Chart, as I believe that one of these has been used very effectively, while the other has not been used as effectively for this project.</p>
+                <p>Each data visualization technique in the COVID-19 Vaccination Tracker (Reuters, 2021) will be analysed using the following criteria:</p>
+                <ul>
+                    <li>Rationale</li>
+                    <li>Suitability</li>
+                    <li>Interactivity and User Engagement</li>
+                    <li>UI/UX Design Principles</li>
+                </ul>
+                <p>Finally, the project will then be analysed as a whole by considering data-driven storytelling and its emotional impact.</p>
+
+                <h3>Data Visualization Techniques</h3>
+                <p>The COVID-19 Vaccination Tracker by Reuters uses a wide range of data visualization techniques to properly convey their findings. The following section of this essay will focus on the specific types of data visualization techniques used and will analyse their suitability and effectiveness.</p>
+
+                <h4>Choropleth Map of the Globe:</h4>
+                <h5>Rationale</h5>
+                <p>The first data visualization technique presented on the website is a ‘Choropleth Map’ of the Globe. A Choropleth Map consists of areas on the map shaded according to the value of a variable (Rogers, Castree and Kitchin, 2013). These maps typically display higher values by using a higher intensity of colour or shade and vice versa. In the Choropleth Map above by Reuters, the intensity of the green colour present on the map indicates a higher percentage value of vaccinated citizens per country, while a less intense green or grey colour indicates a lower percentage value of vaccinated citizens per country, as indicated by the key below the map:</p>
+
+                <h5>Suitability</h5>
+                <p>Due to the geographical nature of this project by Reuters, the use of a Choropleth Map of the globe makes vaccination percentages per country much easier to compare to one another, as countries with a higher vaccination percentage are visibly contrasted by countries with a lower vaccination percentage. This allows the difference between countries with a higher vaccination percentage to be clearly visible against countries with a lower vaccination percentage, even upon a quick glance by a first-time viewer. The Choropleth Map in this case, therefore, allows the total vaccination percentage per country to be conveyed to the viewer in a way that is easily understandable.</p>
+                <p>According to Jenny Kidd when discussing Machin and Mayr’s thoughts on representation, “… where image makers need to get a specific idea across, they will rely on established connotators which they feel confident their target audiences will understand” (2012, cited in Kidd, 2015). The specific use of the choropleth visualization in this global project is excellent in communicating the vaccination percentages per country by using a globe. World/globe maps are widely used in schools and media, making the average person quite familiar with them, at least the basic forms of the continents, to some extent. Therefore, using the globe in this manner to display information about countries allows viewers to gain an intuitive understanding of the vaccination statistics. If they would like to know how much of Madagascar’s population has been vaccinated, they can simply navigate to Madagascar on the map.</p>
+
+                <p>Additionally, to ensure the correctness of information displayed, Reuters opted to use vaccination percentages rather than raw data or values. Percentages consider the total population of each country and display a percentage based on its proportionality to the total amount of doses received. This is essential when mapping a Choropleth, as there can be a significant imbalance of data when raw values are used on a Choropleth Map, as countries with much higher populations can overshadow those with lower populations (Field, 2020).</p>
+
+                <h5>Interactivity and User Engagement</h5>
+                <p>The Choropleth Map used is interactive. It allows users to rotate or ‘spin’ around the globe using an input device (most commonly a mouse). Additionally, countries can also be clicked on to display more information about their vaccination statistics, including the country’s name, the percentage of population that have received one vaccination dose and the percentage of population that have been fully vaccinated. Users who visit the website will be interested in these statistics, and displaying them first is essential to ensure ease of navigation and understanding (UXPin, 2024). As previously mentioned, this can enhance user engagement by displaying more information based on what the user has clicked on, as well as utilizing the user’s current knowledge about world maps to navigate to a specific region (Teo et al., 2003).</p>
+
+                <h5>UI/UX Design Principles</h5>
+                <p>The Choropleth map follows basic UI/UX design principles quite well. It is a simple map to understand (provided the user has seen a world map before), uses contrasting colour to clearly separate values, makes use of clear labels indicating the current country the user is viewing, as well as its vaccination statistics, is interactive, therefore increasing user engagement, and seamlessly scales depending on the screen size of the device it is viewed on, making it accessible to not only desktop users but also tablet and mobile users (Hamidli, 2023).</p>
+
+                <h4>Line Chart Indicating Doses per 100k People:</h4>
+                <h5>Rationale</h5>
+                <p>The second data visualization technique presented on the website is a Line Chart which displays the number of vaccine doses administered per 100,000 people per country. According to CueMath, a line chart is defined as “a type of chart that provides a visual representation of data in the form of points that are connected in a straight line” (CueMath, 2024). Line charts are often regarded as one of the most commonly used charts due to its simplicity, which may be a reason it has been used in the aforementioned project. Additionally, line charts also track data over time, making it suitable for the basic premise of this project.</p>
+
+                <h5>Suitability</h5>
+                <p>While the line chart by itself might be a suitable way to visualize data over time, the way it has been used in the project by Reuters negatively affects its effectiveness. Since the chart aims to track the number of doses administered per 100,000 people across 130 countries, the lines quite literally become blurred. At first glance, the chart is very cluttered. The lines representing the countries this project targeted overlap, making it difficult to determine where a specific country might lie within the graph, which in turn, makes comparing data between countries quite difficult. The only way to determine which line belongs to which country is to slowly move the cursor across the chart, which highlights the hovered line in a green colour and displays the country name.</p>
+
+                <p>According to Qi Li, “Human perception plays an important role in data visualization” (Li, 2020). When looking at the above chart, however, it is quite complex due to the number of countries it compares. While this is not necessarily an issue with the line chart itself, the number of lines on it simply clutters it.</p>
+
+                <h5>Interactivity and User Engagement</h5>
+                <p>The line chart does have some level of interactivity attached to it. Users can move their cursor over a line to highlight it and display the country name belonging to that line. The highlighted line also displays the number of doses per 100,000 people. However, due to the number of overlapping lines visible on the chart, it is quite difficult to pinpoint a specific country, which can lead to a frustrating game of repeatedly moving the cursor as slowly as possible to attempt to find a country, ultimately leading to a much less engaging experience than navigating the previously mentioned Choropleth map (Sauro, 2015).</p>
+
+                <h5>UI/UX Design Principles</h5>
+                <p>While important elements are highlighted for increased visibility, the line chart does not follow basic UI/UX design principles (Kodithuwakku). The chart is congested by the overlapping lines, negatively affecting its coherence. The lack of clear differentiation between countries can make the chart quite confusing to look at. According to the University of the Witwatersrand, “70% of online business fails due to bad usability” (University of the Witwatersrand, 2024). Although the website associated with this chart might not be an online business, adhering to basic design principles could help to create a more engaging experience for the user.</p>
+
+                <p>While I understand that these problems are largely based on the limitations of displaying large quantities of data within a chart, I do think a few external additions could have been beneficial for ease of use and accessibility. A simple search bar, in which users could type in a country name for it to be highlighted, would have been a welcome addition, as users would no longer have to guess where a country is by hovering over a line.</p>
+
+                <h3>Data-Driven Storytelling</h3>
+                <p>As a whole, the project uses the real-world crisis that was the COVID-19 pandemic, along with data, to tell a story of how many people across the world have increased protection against the virus, as a result of the vaccinations they received. This project was actively updated from March 25th of 2021 up to July 15th of 2022, allowing users and health organisations to track the progress of the vaccination campaign. While at the first outbreak of the virus, its spread and potential damage on people was tracked, this project serves to track the positive effects the vaccinations have had against the virus.</p>
+
+                <p>By using narrative in data visualization projects, meaning is applied to data, turning it into valuable information. In this project, ‘80%’ is not just a random percentage, it represents the amount of people who have increased protection against the virus. The use of green to indicate countries with a higher vaccination percentage is quite effective. Green is often associated with being ‘correct’ or positivity (Cherry, 2023), therefore indicating that countries with a higher vaccination percentage have a more positive effect on the population against the virus. For contrast, here is a choropleth map indicating the number of COVID-19 cases in China:</p>
+
+                <h3>Conclusion</h3>
+                <p>While both charts at minimum display vaccination information across countries, it is important to ensure that the data being visualized is presented in a visually coherent way that aims to engage the user. The data presented should not take away from itself by confusing the viewer, and where possible the addition of external elements, such as search bars, could assist the user in navigating the chosen data visualization technique.</p>
+
+                <h3>Bibliography</h3>
+                <ul>
+                    <li>Field, K. (2020). ‘Mapping coronavirus, responsibly’. ArcGIS Blog. Available at: Mapping coronavirus, responsibly (esri.com) (Accessed: 2 September 2024).</li>
+                    <li>Hamidli, N. (2023). ‘Introduction to UI/UX Design: Key Concepts and Principles’. Baku Engineering University. Available at: nnesirr-libre.pdf (d1wqtxts1xzle7.cloudfront.net) (Accessed: 2 September 2024).</li>
+                    <li>Kidd, J. (2015). ‘Representation’. Routledge. Available at: Representation - 1st Edition - Jenny Kidd - Routledge Book (Accessed: 2 September 2024).</li>
+                    <li>Kodithuwakku, T. (2023). ‘Modern UI/UX principles: A comprehensive guide’. Medium. Available at: Modern UI/UX principles: A comprehensive guide | by Tharaka Kodithuwakku | Modern UI / UX Design | Medium (Accessed: 2 September 2024).</li>
+                    <li>Qi, L. (2020). ‘Overview of Data Visualization’. SpringerLink. Available at: Overview of Data Visualization | SpringerLink (Accessed: 2 September 2024).</li>
+                    <li>QueMath. (2024). ‘Line Chart’. CueMath. Available at: Line Charts - Definition, Parts, Types, Creating a Line Chart, Examples (cuemath.com) (Accessed: 2 September 2024).</li>
+                    <li>Reuters. (2021). ‘COVID-19 Vaccination Tracker’. (Reuters). Available at: Latest updates: COVID-19 vaccination charts, maps and eligibility by country (reuters.com) (Accessed: 2 September 2024).</li>
+                    <li>Rhyne, T. (2017). ‘Applying Color Theory to Digital Media and Visualization’. Association for Computing Machinery. Available at: Applying Color Theory to Digital Media and Visualization | Proceedings of the 2017 CHI Conference Extended Abstracts on Human Factors in Computing Systems (acm.org) (Accessed: 2 September 2024).</li>
+                    <li>Rogers, A., Castree, N. and Kitchin, R. (2013). ‘A Dictionary of Human Geography- choropleth map’. Oxford University Press. Available at: Choropleth map - Oxford Reference (Accessed: 2 September 2024).</li>
+                    <li>Sauro, J. (2015). ‘SUPR-Q: A Comprehensive Measure of the Quality of the Website User Experience’. Journal of Usability Studies. Available at: JUS_Sauro_Feb2015.pdf (uxpajournal.org) (Accessed: 2 September 2024).</li>
+                    <li>Teo, H., Oh, L., Liu, C. and Wei, K. (2003). ‘An empirical study of the effects of interactivity on web user attitude’. Elsevier. Available at: An empirical study of the effects of interactivity on web user attitude - ScienceDirect (Accessed: 2 September 2024).</li>
+                    <li>University of the Witwatersrand. (2024). ‘User Experience (UX) - The Dev’s Pipeline’.</li>
+                    <li>UXPin. (2024). ‘The Basic Principles of User Interface Design’. Studio by UXPin. Available at: The Basic Principles of User Interface Design | UXPin (Accessed: 2 September 2024).</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to Top">
+        <i class="fas fa-chevron-up"></i> <!-- Font Awesome icon -->
+        Scroll to Top
+    </button>
+
+    <footer class="footer" role="contentinfo"></footer>
+
     <script src="js/script.js"></script>
     <script src="js/footer.js"></script>
-
 </body>
+
 </html>

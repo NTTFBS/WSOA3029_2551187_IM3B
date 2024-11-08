@@ -1,54 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore worldwide weather data and forecasts. Accurate temperatures and climate information.">
+    <meta name="keywords" content="weather, forecast, global temperatures, interactive globe, data visualization, OpenWeather, temperatures today">
+    <meta name="author" content="2551187">
     <title>Worldwide Weather</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
 </head>
+
 <body class="body">
-    <div id="navbar"></div>
-    <div class="hero">
-    </div>
-    <div class="section center">
-        <div class="content-left">
-            <h1 class="heading-3">WORLDWIDE<br><span class="weather-text">WEATHER</span></h1>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <!-- Include your navigation items here, e.g., links to different sections of the site -->
+    </nav>
+    
+    <header class="hero" role="banner">
+        <h1 class="visually-hidden">Worldwide Weather</h1>
+    </header>
+    
+    <main class="section center">
+        <section class="content-left">
+            <h2 class="heading-3">WORLDWIDE<br><span class="weather-text">WEATHER</span></h2>
             <h3 class="hero-subhead">EXPLORE TEMPERATURES AND FORECASTS ACROSS THE GLOBE.</h3>
-            <a href="#" class="button w-button explore-button">EXPLORE</a>
+            <a href="#" class="button w-button explore-button" role="button" aria-label="Explore weather data">EXPLORE</a>
             <p class="explore-text">Accurate Weather Data provided by OpenWeather</p>
-        </div>
-        <div class="content-right">
-            <img src="images/LowpoyEarth.png" alt="Weather Image" class="responsive-image">
-        </div>
-    </div>
+        </section>
+        <aside class="content-right" aria-label="Weather visualization">
+            <img src="images/LowpoyEarth.png" alt="Illustration of a low poly globe model of the earth." class="responsive-image" />
+        </aside>
+    </main>
+
     <hr class="section-divider">
-    <div class="section center" id="choropleth-section">
-        <div class="content-left">
-            <h1 class="heading-sub interactive-globe">INTERACTIVE GLOBE</h1>
-            <h3 class="spin-me">Spin Me!</h3>
-        </div>
-        <div class="content-right">
-            <h3 class="hero-subhead city-name">TOKYO</h3>
-            <h3 class="hero-subhead city-temp">19C</h3>
-        </div>
+
+    <main class="section center" id="choropleth-section">
+        <section class="content-left">
+            <h2 class="heading-sub interactive-globe">INTERACTIVE GLOBE</h2>
+            <h3 class="spin-me" aria-hidden="true">Spin Me!</h3>
+        </section>
+        <aside class="content-right">
+            <h3 class="hero-subhead city-name" role="alert">TOKYO</h3>
+            <h3 class="hero-subhead city-temp">19°C</h3>
+        </aside>
+        <div class="glow-background"></div>
         <div class="map-content">
-            <div id="map"></div>
+            <div class="slider-container">
+                <i class="fas fa-search-plus" aria-hidden="true"></i>
+                <label for="zoom-slider" class="visually-hidden">Zoom slider</label>
+                <input type="range" id="zoom-slider" min="1" max="10" value="1" step="0.1" aria-label="Zoom level slider" />
+            </div>
+            <div id="map" role="img" aria-label="Temperature map" tabindex="0"></div>
             <p class="weather-data">Accurate Weather Data provided by OpenWeather</p>
+        </div>
+    </main>
+
+    <hr class="section-divider">
+
+    <main class="section center">
+        <section class="content-left">
+            <h2 class="heading-sub highest-temperatures">GLOBAL TEMPERATURES TODAY</h2>
+        </section>
+        <aside class="content-right">
+            <div class="bar-chart-header">
+                <label for="bar-city-filter">Select City for Bar Chart: </label>
+                <select id="bar-city-filter" aria-label="Select city for the bar chart"></select>
+                <button id="toggleChartButton" aria-pressed="false">Show Second Chart</button>
+            </div>
+            <div class="bar-chart-wrapper">
+                <div id="bar-chart" role="img" aria-label="Bar chart showing global temperatures"></div>
+                <div id="second-line-chart" style="display: none;" aria-hidden="true"></div>
+            </div>
+            <p class="weather-data">Accurate Weather Data provided by OpenWeather</p>
+        </aside>
+    </main>
+
+    <hr class="section-divider">
+    <main class="section center">
+        <section class="line-chart-wrapper">
+            <h2 class="heading-sub line-chart-title">5-DAY FORECAST</h2>
+            <div>
+                <label for="city-filter">Select City: </label>
+                <select id="city-filter" aria-label="Select city for the 5-day forecast"></select>
+                <button id="openModal" class="button" aria-label="Add a comment about the forecast">Add Comment</button>
+            </div>
+            <div id="line-chart" role="img" aria-label="Line chart showing 5 day forecast"></div>
+            <p class="weather-data">Accurate Weather Data provided by OpenWeather</p>
+        </section>
+
+        <div id="commentDisplay" class="comment-display" aria-live="polite">Latest Comment: None</div>
+        <div id="legend" class="legend" role="img" aria-label="Legend for the chart"></div>
+    </main>
+
+    <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+    
+    <!-- Loading Icon -->
+    <div id="loading" class="loading" role="alert">Loading data, please wait...</div>
+
+    <!-- Scroll Indicator -->
+    <div id="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+        <span>Scroll Down</span>
+    </div>
+    
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-button" aria-label="Close comment modal">&times;</button>
+            <h2 class="modal-header">Add Your Comment</h2>
+            <textarea id="annotation" placeholder="Add your comment here..." aria-label="Add your comment"></textarea>
+            <button id="saveAnnotation" aria-label="Save your comment">Save Comment</button>
+            <h2 class="modal-header">Previous Comments</h2>
+            <ul id="commentsList"></ul>
         </div>
     </div>
     <hr class="section-divider">
-    <div class="section center">
-        <div class="content-left">
-            <h1 class="heading-sub highest-temperatures">HIGHEST TEMPERATURES TODAY</h1>
+
+    <h2 class="heading-sub">GET IN TOUCH</h2>
+    <p class="contact-info">Want to know more about us and the data we provide?</p>
+
+    <div class="contact-container" id="contactForm" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="contact-title">Contact Us</h2>
+        <div class="form-row">
+            <div class="form-group first-name-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your Name" aria-required="true" />
+                <div id="nameError" class="error-message" role="alert"></div>
+            </div>
         </div>
-        <div class="content-right">
-            <div id="bar-chart"></div>
-            <p class="weather-data">Accurate Weather Data provided by OpenWeather</p>
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input id="email" type="email" placeholder="example@example.com" aria-required="true" />
+            <div id="emailError" class="error-message" role="alert"></div>
         </div>
+        <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input id="phone" type="tel" placeholder="071 000 0000" aria-required="true" />
+            <div id="phoneError" class="error-message" role="alert"></div>
+        </div>
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" class="input-message" placeholder="Your message..." aria-required="true"></textarea>
+            <div id="messageError" class="error-message" role="alert"></div>
+        </div>
+        <button class="submit-button" id="submitForm" aria-label="Submit contact form">Submit →</button>
+        <div id="formSuccess" class="success-message" aria-live="polite"></div>
     </div>
-    <div id="tooltip" class="tooltip"></div>
+    <!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to Top">
+    <i class="fas fa-chevron-up"></i> <!-- Font Awesome icon -->
+    Scroll to Top
+</button>
+
+
+    <footer class="footer" role="contentinfo"></footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>
